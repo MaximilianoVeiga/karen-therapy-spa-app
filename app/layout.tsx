@@ -86,7 +86,7 @@ export default function RootLayout({
     url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
     image: "/assets/karen-albino-facchini.webp",
     telephone: "+55 19 98835-7393",
-    email: "contato@karenalbino.com.br",
+    email: "contato@karenalbino.com",
     areaServed: "Brazil",
     availableLanguage: ["pt-BR"],
     sameAs: [] as string[],

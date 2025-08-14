@@ -32,7 +32,7 @@ export function ContactStrip() {
                 
                 <a 
                   className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors" 
-                  href="mailto:contato@karenalbino.com.br"
+                  href="mailto:contato@karenalbino.com"
                 >
                   <Mail className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform" />
                   <div className="text-left">

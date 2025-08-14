@@ -52,7 +52,7 @@ export function FooterSection() {
             <h3 className="font-semibold text-gray-900">Contato</h3>
             <nav className="space-y-2">
               <a 
-                href="mailto:contato@karenalbino.com.br" 
+                href="mailto:contato@karenalbino.com" 
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-[var(--brand-primary)] transition-colors"
               >
                 <Mail className="h-4 w-4" />
