@@ -107,17 +107,6 @@ export function AboutSection() {
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                      <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                    </span>
-                    <p className="font-medium">
-                      Atendimentos online para Brasil e exterior. Entre em contato para tirar dúvidas.
-                    </p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>

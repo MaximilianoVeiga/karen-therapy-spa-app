@@ -9,7 +9,6 @@ const links = [
   { href: '#servicos', label: 'Serviços' },
   { href: '#como-funciona', label: 'Como funciona' },
   { href: '#valores', label: 'Valores' },
-  { href: '#depoimentos', label: 'Depoimentos' },
   { href: '#agendamento', label: 'Agendar' },
 ]
 
@@ -23,7 +22,7 @@ export function Navbar() {
       setScrolled(window.scrollY > 10)
       
       // Update active section based on scroll position
-      const sections = ['sobre', 'servicos', 'como-funciona', 'valores', 'depoimentos', 'agendamento']
+      const sections = ['sobre', 'servicos', 'como-funciona', 'valores', 'agendamento']
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
@@ -92,8 +91,7 @@ export function Navbar() {
             </Button>
             <Button 
               size="sm"
-              variant="outline"
-              className="border-[var(--brand-cta)] text-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/10 shadow-md hover:shadow-lg transition-all" 
+              className="bg-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/90 text-white shadow-md hover:shadow-lg transition-all" 
               onClick={() => goToBooking('full')}
             >
               Agendar sessão
@@ -140,8 +138,7 @@ export function Navbar() {
               Conversa inicial grátis (15 min)
             </Button>
             <Button 
-              variant="outline" 
-              className="w-full border-[var(--brand-cta)] text-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/10"
+              className="w-full bg-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/90 text-white"
               onClick={() => goToBooking('full')}
             >
               Agendar sessão completa

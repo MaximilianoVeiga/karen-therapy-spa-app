@@ -60,8 +60,7 @@ export function HeroSection() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-2 border-[var(--brand-cta)] text-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/10 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-6 text-base font-semibold"
+                className="bg-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/90 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-6 text-base font-semibold"
                 onClick={() => goToBooking('full')}
               >
                 Agendar sessão completa

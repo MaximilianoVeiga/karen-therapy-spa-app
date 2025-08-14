@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Nunito, Merriweather } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script"
 import "./globals.css"
 
 const nunito = Nunito({
@@ -18,14 +19,57 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: "Acolhimento e apoio para a sua jornada emocional | Karen Psicóloga",
-  description: "Terapia online para brasileiros no Brasil e no exterior.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
+  title: {
+    default: "Acolhimento e apoio para a sua jornada emocional",
+    template: "%s | Karen Psicóloga",
+  },
+  description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+  keywords: [
+    "psicóloga",
+    "terapia online",
+    "psicologia",
+    "atendimento psicológico",
+    "conversa inicial grátis",
+    "terapia para brasileiros no exterior",
+    "saúde mental",
+    "bem-estar emocional",
+  ],
+  authors: [{ name: "Karen Albino Facchini" }],
+  creator: "Karen Albino Facchini",
+  publisher: "Karen Albino Facchini",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Acolhimento e apoio para a sua jornada emocional",
-    description: "Terapia online para brasileiros no Brasil e no exterior.",
+    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+    url: "/",
+    siteName: "Karen Psicóloga",
     type: "website",
     locale: "pt_BR",
+    images: [
+      {
+        url: "/assets/karen-albino-facchini.webp",
+        width: 1200,
+        height: 630,
+        alt: "Karen Albino Facchini – Psicóloga",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Acolhimento e apoio para a sua jornada emocional",
+    description: "Terapia online humanizada para brasileiros no Brasil e no exterior.",
+    images: ["/assets/karen-albino-facchini.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
   },
 }
 
@@ -34,6 +78,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Karen Albino Facchini",
+    url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
+    image: "/assets/karen-albino-facchini.webp",
+    telephone: "+55 19 98835-7393",
+    email: "contato@karenalbino.com.br",
+    areaServed: "Brazil",
+    availableLanguage: ["pt-BR"],
+    sameAs: [] as string[],
+    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+  }
   return (
     <html lang="pt-BR">
       <body className={`${nunito.variable} ${merriweather.variable} antialiased`}>
@@ -42,6 +99,9 @@ export default function RootLayout({
         </a>
         {children}
         <Analytics />
+        <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(jsonLd)}
+        </Script>
       </body>
     </html>
   )

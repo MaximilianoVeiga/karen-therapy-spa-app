@@ -86,10 +86,10 @@ export function ServicesSection() {
             {additionalServices.map((service) => (
               <div 
                 key={service.text}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-gray-200 hover:border-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/5 transition-all duration-200 group"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-gray-200 hover:border-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/5 transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-md ring-0 hover:ring-1 hover:ring-[var(--brand-primary)]/30 group"
               >
-                <service.icon className="h-4 w-4 text-gray-600 group-hover:text-[var(--brand-primary)]" />
-                <span className="text-sm font-medium text-gray-700 group-hover:text-[var(--brand-primary)]">
+                <service.icon className="h-4 w-4 text-gray-600 group-hover:text-[var(--brand-primary)] transition-transform group-hover:scale-110" />
+                <span className="text-sm font-medium text-gray-700 group-hover:text-[var(--brand-primary)] transition-colors">
                   {service.text}
                 </span>
               </div>
