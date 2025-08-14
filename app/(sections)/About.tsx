@@ -8,10 +8,8 @@ export function AboutSection() {
     { name: 'Transtorno do Espectro Autista (TEA)', icon: '🧩' },
     { name: 'TDA/TDAH', icon: '🎯' },
     { name: 'Saúde mental', icon: '💚' },
-    { name: 'Paternidade', icon: '👨‍👧' },
-    { name: 'Neuropsicologia infantil', icon: '🧠' },
-    { name: 'Família', icon: '👨‍👩‍👧‍👦' },
-    { name: 'Maternidade', icon: '👩‍👧' },
+    { name: 'Acompanhamento parental', icon: '👨‍👩‍👧' },
+    { name: 'Desenvolvimento e Aprendizagem', icon: '📚' },
   ] as const
   const approach = ['Humanista'] as const
   const audience = ['Adolescentes', 'Adultos', 'Casais', 'Idosos'] as const

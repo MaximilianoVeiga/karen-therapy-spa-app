@@ -41,7 +41,7 @@ export function Navbar() {
 
   const onNavClick = () => setOpen(false)
 
-  const goToBooking = (tab: '15m' | 'full') => {
+  const goToBooking = (tab: '30m' | 'full') => {
     const url = new URL(window.location.href)
     url.hash = 'agendamento'
     url.searchParams.set('tab', tab)
@@ -84,10 +84,10 @@ export function Navbar() {
             <Button 
               size="sm"
               className="bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg transition-all" 
-              onClick={() => goToBooking('15m')}
+              onClick={() => goToBooking('30m')}
             >
               <Calendar className="mr-1.5 h-4 w-4" />
-              15m grátis
+              30 min
             </Button>
             <Button 
               size="sm"
@@ -132,10 +132,10 @@ export function Navbar() {
           <div className="px-4 pb-6 space-y-3 border-t pt-6">
             <Button 
               className="w-full bg-green-600 hover:bg-green-700 text-white" 
-              onClick={() => goToBooking('15m')}
+              onClick={() => goToBooking('30m')}
             >
               <Calendar className="mr-2 h-4 w-4" />
-              Conversa inicial grátis (15 min)
+              Primeira sessão (30 min)
             </Button>
             <Button 
               className="w-full bg-[var(--brand-cta)] hover:bg-[var(--brand-cta)]/90 text-white"

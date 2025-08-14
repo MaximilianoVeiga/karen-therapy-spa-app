@@ -12,7 +12,7 @@ export function BookingSection() {
             Agende seu Atendimento
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            Entre em contato para agendar sua conversa inicial gratuita. Atendimento online com toda comodidade e sigilo profissional.
+            Entre em contato para agendar sua primeira sessão de 30 minutos. Atendimento online com toda comodidade e sigilo profissional.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export function BookingSection() {
             <CardContent className="p-8">
               <div className="grid sm:grid-cols-2 gap-4">
                 <a 
-                  href="https://wa.me/5519988357393?text=Olá%2C%20gostaria%20de%20agendar%20uma%20conversa%20inicial%20gratuita."
+                  href="https://wa.me/5519988357393?text=Olá%2C%20gostaria%20de%20agendar%20uma%20primeira%20sessão%20de%2030%20minutos."
                   target="_blank" 
                   rel="noreferrer" 
                   className="group relative overflow-hidden rounded-xl bg-green-600 hover:bg-green-700 text-white p-6 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"

@@ -21,16 +21,16 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
   title: {
-    default: "Acolhimento e apoio para a sua jornada emocional",
+    default: "Acolhimento e apoio para o seu processo de crescimento",
     template: "%s | Karen Psicóloga",
   },
-  description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+  description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
   keywords: [
     "psicóloga",
     "terapia online",
     "psicologia",
     "atendimento psicológico",
-    "conversa inicial grátis",
+    "primeira sessão 30 minutos",
     "terapia para brasileiros no exterior",
     "saúde mental",
     "bem-estar emocional",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Acolhimento e apoio para a sua jornada emocional",
-    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+    title: "Acolhimento e apoio para o seu processo de crescimento",
+    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
     url: "/",
     siteName: "Karen Psicóloga",
     type: "website",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Acolhimento e apoio para a sua jornada emocional",
+    title: "Acolhimento e apoio para o seu processo de crescimento",
     description: "Terapia online humanizada para brasileiros no Brasil e no exterior.",
     images: ["/assets/karen-albino-facchini.webp"],
   },
@@ -90,7 +90,7 @@ export default function RootLayout({
     areaServed: "Brazil",
     availableLanguage: ["pt-BR"],
     sameAs: [] as string[],
-    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Conversa inicial gratuita de 15 minutos.",
+    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
   }
   return (
     <html lang="pt-BR">

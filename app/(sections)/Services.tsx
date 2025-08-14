@@ -33,8 +33,8 @@ export function ServicesSection() {
   ] as const
 
   const additionalServices = [
-    { icon: Brain, text: 'Neuropsicologia' },
-    { icon: Users, text: 'Terapia de casal' },
+    { icon: Brain, text: 'Desenvolvimento e Aprendizagem' },
+    { icon: Users, text: 'Acompanhamento parental' },
     { icon: Sparkles, text: 'Desenvolvimento pessoal' },
   ]
 
@@ -77,24 +77,6 @@ export function ServicesSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Additional services */}
-        <div className="border-t pt-8">
-          <p className="text-center text-sm font-semibold text-gray-600 mb-6">Também oferecemos:</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {additionalServices.map((service) => (
-              <div 
-                key={service.text}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-gray-200 hover:border-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/5 transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-md ring-0 hover:ring-1 hover:ring-[var(--brand-primary)]/30 group"
-              >
-                <service.icon className="h-4 w-4 text-gray-600 group-hover:text-[var(--brand-primary)] transition-transform group-hover:scale-110" />
-                <span className="text-sm font-medium text-gray-700 group-hover:text-[var(--brand-primary)] transition-colors">
-                  {service.text}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

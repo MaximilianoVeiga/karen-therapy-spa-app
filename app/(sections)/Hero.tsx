@@ -1,9 +1,9 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { CalendarClock, ShieldCheck, Globe2, CheckCircle2, Star } from 'lucide-react'
+import { CalendarClock, ShieldCheck, Globe2, CheckCircle2 } from 'lucide-react'
 
 export function HeroSection() {
-  const goToBooking = (tab: '15m' | 'full') => {
+  const goToBooking = (tab: '30m' | 'full') => {
     const url = new URL(window.location.href)
     url.hash = 'agendamento'
     url.searchParams.set('tab', tab)
@@ -26,13 +26,13 @@ export function HeroSection() {
           <div className="text-center lg:text-left space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-primary)]/30 bg-white/80 backdrop-blur px-4 py-2 text-sm font-medium text-gray-800 shadow-sm animate-fade-in">
               <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)] animate-pulse" /> 
-              <span>15 minutos iniciais grátis</span>
+              <span>Primeira sessão de 30 minutos</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 animate-fade-in-up">
-              Acolhimento e apoio para a sua{' '}
+              Acolhimento e apoio para o seu{' '}
               <span className="text-[var(--brand-primary)]">
-                jornada emocional
+                processo de crescimento
               </span>
             </h1>
             
@@ -40,12 +40,7 @@ export function HeroSection() {
               Terapia online para brasileiros no Brasil e no exterior.
             </p>
             
-            <div className="flex items-center gap-2 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
-              <div className="flex -space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
+            <div className="flex items-center justify-center lg:justify-start animate-fade-in-up animation-delay-300">
               <p className="text-sm text-gray-600 font-medium">Karen Albino Facchini · CRP 06/210319</p>
             </div>
             
@@ -53,10 +48,10 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-6 text-base font-semibold" 
-                onClick={() => goToBooking('15m')}
+                onClick={() => goToBooking('30m')}
               >
                 <CalendarClock className="mr-2 h-5 w-5" />
-                Agendar 15m grátis
+                Agendar 30 minutos
               </Button>
               <Button 
                 size="lg" 
@@ -95,8 +90,8 @@ export function HeroSection() {
                   <ShieldCheck className="h-6 w-6 text-[var(--brand-cta)]" />
                 </div>
                 <div className="flex-1">
-                  <p className="font-semibold text-gray-900 text-lg">Sigilo e segurança</p>
-                  <p className="text-sm text-gray-600 mt-1">Seus dados protegidos e pagamento seguro pelo Stripe.</p>
+                  <p className="font-semibold text-gray-900 text-lg">Sigilo e confidencialidade</p>
+                  <p className="text-sm text-gray-600 mt-1">Sigilo e confidencialidade garantidos em todas as sessões.</p>
                 </div>
               </div>
             </div>

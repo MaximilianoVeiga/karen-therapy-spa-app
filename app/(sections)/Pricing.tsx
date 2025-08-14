@@ -1,27 +1,45 @@
 'use client'
+import type React from 'react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, Clock, CreditCard, Shield, Gift } from 'lucide-react'
 
+type PlanTab = '30m' | 'full'
+interface PlanConfig {
+  name: string
+  duration: string
+  price: string
+  description: string
+  features: string[]
+  highlighted: boolean
+  icon: React.ComponentType<{ className?: string }>
+  color: string
+  borderColor: string
+  buttonText: string
+  buttonVariant: 'outline' | 'default'
+  tab: PlanTab
+}
+
 export function PricingSection() {
-  const plans = [
+  const plans: PlanConfig[] = [
     {
       name: 'Conversa Inicial',
-      duration: '15 minutos',
-      price: 'Gratuito',
-      description: 'Conheça meu trabalho sem compromisso',
+      duration: '30 minutos',
+      price: 'R$ 50',
+      description: 'Primeira sessão reduzida para conhecer o trabalho',
       features: [
-        'Primeira conversa gratuita',
-        'Conhecer a abordagem',
-        'Tirar dúvidas',
-        'Sem compromisso',
+        'Primeira sessão de 30 minutos',
+        'Mais acessível pelo tempo reduzido',
+        'Apresentação da abordagem',
+        'Espaço para tirar dúvidas',
       ],
       highlighted: false,
       icon: Gift,
       color: 'bg-green-500/20',
       borderColor: 'border-green-300',
-      buttonText: 'Agendar conversa grátis',
+      buttonText: 'Agendar 30 minutos',
       buttonVariant: 'outline' as const,
+      tab: '30m' as const,
     },
     {
       name: 'Sessão Completa',
@@ -32,7 +50,7 @@ export function PricingSection() {
         'Sessão individual completa',
         'Atendimento personalizado',
         'Horários flexíveis',
-        'Pagamento seguro via Stripe',
+        'Sigilo e confidencialidade garantidos',
       ],
       highlighted: true,
       icon: Clock,
@@ -40,6 +58,7 @@ export function PricingSection() {
       borderColor: 'border-[var(--brand-cta)]/50',
       buttonText: 'Agendar sessão',
       buttonVariant: 'default' as const,
+      tab: 'full' as const,
     },
   ]
 
@@ -76,7 +95,7 @@ export function PricingSection() {
                 <p className="text-sm text-gray-600 mt-1">{plan.duration}</p>
                 <div className="mt-4">
                   <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                  {plan.price !== 'Gratuito' && <span className="text-gray-600 ml-1">/sessão</span>}
+                  <span className="text-gray-600 ml-1">/sessão</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">{plan.description}</p>
               </CardHeader>
@@ -97,10 +116,9 @@ export function PricingSection() {
                       : ''
                   }`}
                   onClick={() => {
-                    const tab = plan.price === 'Gratuito' ? '15m' : 'full'
                     const url = new URL(window.location.href)
                     url.hash = 'agendamento'
-                    url.searchParams.set('tab', tab)
+                    url.searchParams.set('tab', plan.tab)
                     window.history.replaceState({}, '', url.toString())
                     document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
                   }}
@@ -112,20 +130,20 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Payment Info */}
+        {/* Payment / Privacy Info */}
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <div className="flex items-start gap-3 text-sm">
             <CreditCard className="h-5 w-5 text-gray-600 mt-0.5" />
             <div>
-              <p className="font-semibold text-gray-900">Pagamento Seguro</p>
+              <p className="font-semibold text-gray-900">Pagamento</p>
               <p className="text-gray-600">Combinado diretamente no contato</p>
             </div>
           </div>
           <div className="flex items-start gap-3 text-sm">
             <Shield className="h-5 w-5 text-gray-600 mt-0.5" />
             <div>
-              <p className="font-semibold text-gray-900">Garantia</p>
-              <p className="text-gray-600">Satisfação garantida</p>
+              <p className="font-semibold text-gray-900">Sigilo e confidencialidade</p>
+              <p className="text-gray-600">Sigilo profissional assegurado conforme o código de ética</p>
             </div>
           </div>
         </div>

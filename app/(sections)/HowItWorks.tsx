@@ -5,22 +5,22 @@ export function HowItWorksSection() {
   const steps = [
     {
       icon: Calendar,
-      title: 'Escolha seu horário',
-      description: 'Acesse o calendário online e escolha o melhor horário para você',
+      title: 'Entre em contato para agendar',
+      description: 'Fale comigo pelos canais disponíveis para combinarmos o melhor horário',
       color: 'bg-blue-500/20',
       iconColor: 'text-blue-600',
     },
     {
       icon: MessageCircle,
-      title: 'Conversa inicial gratuita',
-      description: 'Conheça meu trabalho em uma conversa de 15 minutos sem compromisso',
+      title: 'Conversa inicial (30 min)',
+      description: 'Conversa de 30 minutos para conhecer meu trabalho e tirar dúvidas',
       color: 'bg-[var(--brand-primary)]/20',
       iconColor: 'text-[var(--brand-primary)]',
     },
     {
       icon: Heart,
       title: 'Continue sua jornada',
-      description: 'Se fizer sentido, agende sessões completas com pagamento seguro',
+      description: 'Se fizer sentido, agende sessões completas',
       color: 'bg-[var(--brand-cta)]/20',
       iconColor: 'text-[var(--brand-cta)]',
     },
