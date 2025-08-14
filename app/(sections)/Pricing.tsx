@@ -26,7 +26,7 @@ export function PricingSection() {
     {
       name: 'Sessão Completa',
       duration: '50 minutos',
-      price: 'R$ 90',
+      price: 'R$ 80',
       description: 'Atendimento psicológico completo',
       features: [
         'Sessão individual completa',
