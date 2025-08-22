@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Heart, Globe2, Smile, Brain, Users, Sparkles, CheckCircle2 } from 'lucide-react'
+import { Heart, Globe2, Smile, CheckCircle2 } from 'lucide-react'
 
 export function ServicesSection() {
   const services = [
@@ -31,12 +31,6 @@ export function ServicesSection() {
       borderColor: 'border-[var(--brand-primary)]/30',
     },
   ] as const
-
-  const additionalServices = [
-    { icon: Brain, text: 'Desenvolvimento e Aprendizagem' },
-    { icon: Users, text: 'Acompanhamento parental' },
-    { icon: Sparkles, text: 'Desenvolvimento pessoal' },
-  ]
 
   return (
     <section id="servicos" className="w-full section-padding bg-[var(--brand-background)]/10">

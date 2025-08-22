@@ -20,11 +20,14 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
+  applicationName: "Karen Psicóloga",
+  generator: "Next.js",
   title: {
     default: "Acolhimento e apoio para o seu processo de crescimento",
     template: "%s | Karen Psicóloga",
   },
   description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
+  category: "Health",
   keywords: [
     "psicóloga",
     "terapia online",
@@ -38,8 +41,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Karen Albino Facchini" }],
   creator: "Karen Albino Facchini",
   publisher: "Karen Albino Facchini",
+  referrer: "origin-when-cross-origin",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   alternates: {
     canonical: "/",
+    languages: {
+      "pt-BR": "/",
+    },
   },
   openGraph: {
     title: "Acolhimento e apoio para o seu processo de crescimento",
@@ -66,12 +78,20 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
   },
 }
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({
@@ -79,19 +99,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Karen Albino Facchini",
-    url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com'),
-    image: "/assets/karen-albino-facchini.webp",
-    telephone: "+55 19 98835-7393",
-    email: "contato@karenalbino.com",
-    areaServed: "Brazil",
-    availableLanguage: ["pt-BR"],
-    sameAs: [] as string[],
-    description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
-  }
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://karenalbino.com')
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${baseUrl}#website`,
+      url: baseUrl,
+      name: "Karen Psicóloga",
+      inLanguage: "pt-BR",
+      publisher: {
+        "@type": "Person",
+        name: "Karen Albino Facchini",
+      },
+      description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${baseUrl}#service`,
+      name: "Karen Albino Facchini",
+      url: baseUrl,
+      image: "/assets/karen-albino-facchini.webp",
+      telephone: "+55 19 98835-7393",
+      email: "contato@karenalbino.com",
+      areaServed: "Brazil",
+      availableLanguage: ["pt-BR"],
+      sameAs: [] as string[],
+      serviceType: "Terapia psicológica online",
+      description: "Terapia online humanizada para brasileiros no Brasil e no exterior. Primeira sessão de 30 minutos.",
+    },
+  ]
   return (
     <html lang="pt-BR">
       <body className={`${nunito.variable} ${merriweather.variable} antialiased`}>
